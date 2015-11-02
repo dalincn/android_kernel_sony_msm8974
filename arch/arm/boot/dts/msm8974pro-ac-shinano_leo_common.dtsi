@@ -438,13 +438,16 @@
 			gpio-key,wakeup;
 			debounce-interval = <15>;
 		};
+	};
 
-		sim_det {
+	sim_detect {
+		compatible = "sim-detect";
+		interrupt-parent = <&msmgpio>;
+		interrupts = <9 0>;
+
+		sim1_det {
 			label = "sim-detection";
 			gpios = <&msmgpio 9 0x0>;
-			linux,input-type = <5>;
-			linux,code = <7>;
-			gpio-key,wakeup;
 			debounce-interval = <10>;
 		};
 	};
